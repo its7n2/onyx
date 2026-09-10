@@ -1,0 +1,8 @@
+# Customer data NEVER leaves this machine — never commit engagement content
+projects/*
+!projects/.gitkeep
+
+# Local secrets (SysRaptor key etc.)
+sysraptor.local.json
+*.key
+.env
