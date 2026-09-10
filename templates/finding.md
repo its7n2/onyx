@@ -4,7 +4,7 @@
 - **CVSS 3.1:** <vector string> (<score>)
 - **Asset:** <exact host/URL/app/package>
 - **Status:** open / fixed / risk-accepted
-- **SysRaptor:** <not pushed / pushed <id>>
+- **SysReptor:** <not pushed / pushed <id>>
 
 ## Description
 <What the vulnerability is, in 2–4 sentences a system owner understands.>

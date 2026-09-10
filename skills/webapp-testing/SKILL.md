@@ -33,5 +33,5 @@ For every candidate finding, capture the exact request/response pair (raw, from 
 ## Rules
 
 - Two accounts minimum, one victim one attacker; never touch real users' data — if an IDOR exposes other users, grab one record as proof, note it, and stop (data-handling rule in `scope.md`).
-- Report only what you reproduced — `report-writing` turns finding files into the deliverable, `sysraptor` pushes them (confirm first).
+- Report only what you reproduced — `report-writing` turns finding files into the deliverable, `sysreptor` pushes them (confirm first).
 - Testing accounts and staged payloads get cleaned up or disclosed in the report — the customer should never discover test artifacts we didn't document.

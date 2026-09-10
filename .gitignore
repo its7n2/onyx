@@ -2,7 +2,7 @@
 projects/*
 !projects/.gitkeep
 
-# Local secrets (SysRaptor key etc.)
-sysraptor.local.json
+# Local secrets (SysReptor key etc.)
+sysreptor.local.json
 *.key
 .env

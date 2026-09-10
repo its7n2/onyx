@@ -53,7 +53,7 @@ scope.md  roe.md  recon/  enum/  findings/  evidence/  notes.md  report/
 ## Session close (whenever wrapping up)
 
 - Update `notes.md` (state of testing, pending leads) and the activity status in `profile.md`: `active` → `testing-done` → `reported`.
-- If findings exist and the operator wants to report: `report-writing` → `sysraptor` (confirm before any push).
+- If findings exist and the operator wants to report: `report-writing` → `sysreptor` (confirm before any push).
 
 ## Rules
 

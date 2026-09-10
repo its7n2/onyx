@@ -1,6 +1,6 @@
 # Onyx
 
-A portable AI penetration-testing agent. Onyx runs consultancy-grade engagements — external network, internal network / Active Directory, web application, API, and mobile — with project-per-customer organization, scope/RoE enforcement, and findings delivery to SysRaptor.
+A portable AI penetration-testing agent. Onyx runs consultancy-grade engagements — external network, internal network / Active Directory, web application, API, and mobile — with project-per-customer organization, scope/RoE enforcement, and findings delivery to SysReptor.
 
 Works with **ZCode** and **Claude Code** (any backend, including z.ai-hosted models via the Claude CLI).
 
@@ -9,7 +9,7 @@ Works with **ZCode** and **Claude Code** (any backend, including z.ai-hosted mod
 - **Kickoff gate** — every session starts by asking for the customer name. New customer → new project folder; existing customer → a new activity is added to their folder. No testing before scope + RoE are written and confirmed.
 - **Phase skills** — one skill per pentest phase: recon → service enumeration → network/web/API/mobile exploitation → privesc → reporting.
 - **Project folders** — `projects/<customer>/<date>_<activity-type>/` holding scope.md, roe.md, recon, enum, findings (F-01, F-02...), evidence, notes, and the report. Customer data is gitignored and never leaves the machine.
-- **SysRaptor delivery** — findings written during testing push straight into SysRaptor via its API (confirm-first).
+- **SysReptor delivery** — findings written during testing push straight into SysReptor via its REST API (confirm-first).
 
 ## Layout
 
@@ -51,17 +51,20 @@ Restart your CLI session. Onyx opens with: *"Onyx online. Who are we working for
 | `exploit-dev` | binary exploitation & PoC engineering |
 | `nuclei-hunting` | safe sweeps + custom template authoring |
 | `report-writing` | findings, severity, full report |
-| `sysraptor` | push findings to SysRaptor via API |
+| `sysreptor` | push findings to SysReptor via API |
 
-## SysRaptor configuration
+## SysReptor configuration
 
-Set the API key as an environment variable:
+Store the API token in `sysreptor.local.json` at the repo root (gitignored):
 
-```bash
-export ONYX_SYSRAPTOR_API_KEY="..."
+```json
+{
+  "base_url": "https://cloud.sysreptor.com",
+  "api_token": "sysreptor_..."
+}
 ```
 
-or create `sysraptor.local.json` at the repo root (gitignored). The API endpoint map in `skills/sysraptor/SKILL.md` is filled in once, from your API documentation — until then the skill preps findings and stops before pushing.
+or set `ONYX_SYSREPTOR_API_KEY` as an environment variable. Self-hosted instance → change `base_url`. The API map in `skills/sysreptor/SKILL.md` follows the official docs (projects, findings, fromtemplate, check, generate, export).
 
 ## Claude Code + z.ai
 
@@ -85,4 +88,4 @@ Projects live inside the cloned repo folder — copy them over separately (never
 
 - Scope card is law — no testing outside `scope.md`, no destructive actions, production stays up.
 - Nothing gets reported that wasn't reproduced.
-- External writes (SysRaptor pushes, client delivery) are confirm-first, every time.
+- External writes (SysReptor pushes, client delivery) are confirm-first, every time.

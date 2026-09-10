@@ -27,4 +27,4 @@ New-Item -ItemType File -Path "$root\projects\.gitkeep" -Force | Out-Null
 
 Write-Host ""
 Write-Host "Onyx installed. Restart your CLI session to load the persona."
-Write-Host "Optional: set ONYX_SYSRAPTOR_API_KEY (env var) or sysraptor.local.json at the repo root."
+Write-Host "Optional: SysReptor config at repo root (sysreptor.local.json) or ONYX_SYSREPTOR_API_KEY env var."

@@ -23,4 +23,4 @@ touch "$root/projects/.gitkeep"
 
 echo ""
 echo "Onyx installed. Restart your CLI session to load the persona."
-echo "Optional: export ONYX_SYSRAPTOR_API_KEY or create sysraptor.local.json at the repo root."
+echo "Optional: SysReptor config at repo root (sysreptor.local.json) or ONYX_SYSREPTOR_API_KEY env var."
